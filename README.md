@@ -6,7 +6,7 @@ This project implements a simple to-do list application using HTML, CSS, Node.js
 
 - HTML: Basic structure of the webpage.
 - CSS: Interface styling.
-- Node.js: Runtime environment for the backend and API logic.
+- Javascript // Node.js: Runtime environment for the backend and API logic.
 - Fastify: Framework for creating the backend server.
 
 ## Features
