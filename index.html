@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tarefas</title>
+  <link rel="stylesheet" href="/src/css/style.css"> <!-- Caminho para o CSS -->
+</head>
+<body>
+
+  <!-- Container principal -->
+  <div class="container">
+    <h1>Lista de Tarefas</h1>
+
+    <form action="/Task" method="POST">
+      <div class="form-group">
+        <label for="tarefa">Tarefa</label>
+        <input type="text" id="tarefa" name="tarefa" placeholder="Nova tarefa" required>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status</label>
+        <select id="status" name="status" required>
+          <option value="Pendente">Pendente</option>
+          <option value="Concluída">Concluída</option>
+        </select>
+      </div>
+
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Tarefa</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="task-list">
+      </tbody>
+    </table>
+  </div>
+<footer>
+  <p class="effect">&copy;2025, Feito por: Pedro Henrique e Felipe. Todos os Direitos reservados</p>
+</footer>
+
+  <script>
+    //carregar as tarefas com fetch
+    window.onload = function() {
+      fetch('/Task')
+        .then(response => response.json())
+        .then(tasks => {
+          const taskList = document.getElementById('task-list');
+          tasks.forEach(task => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+              <td>${task.tarefa}</td>
+              <td>${task.status}</td>
+              <td class="actions">
+                <!-- Formulário para Deletar a Tarefa -->
+                <form action="/Task/${task.id}" method="POST" class="delete-form">
+                  <!-- Campo oculto que indica que o método real é DELETE -->
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button type="submit" class="action-btn delete-btn">Deletar</button>
+                </form>
+                <!-- Link para Editar a Tarefa -->
+                <button type="submit" name="_metod" value ="PUT" class = "action-btn edit-btn">
+                  <a href="/Task/edit/${task.id}">Editar</a>
+                </button>
+              </td>
+            `;
+            taskList.appendChild(tr);
+          });
+        });
+    };
+</script>
+
+</body>
+</html>
