@@ -1,41 +1,44 @@
-# Task List - To-Do List Project
+# Lista de Tarefas - Projeto To-Do List
 
-This project implements a simple to-do list application using HTML, CSS, Node.js, and the Fastify framework.
+Este projeto implementa um aplicativo simples de lista de tarefas utilizando HTML, CSS, Node.js e o framework Fastify.
 
-## Technologies Used
+## Tecnologias Utilizadas
 
-- HTML: Basic structure of the webpage.
-- CSS: Interface styling.
-- Javascript // Node.js: Runtime environment for the backend and API logic.
-- Fastify: Framework for creating the backend server.
+- **HTML**: Estrutura básica da página web.  
+- **CSS**: Estilização da interface.  
+- **JavaScript / Node.js**: Ambiente de execução para o backend e lógica da API.  
+- **Fastify**: Framework para criação do servidor backend.
 
-## Features
+## Funcionalidades
 
-- Add new tasks.
-- Mark tasks as pending or completed.
-- Remove tasks from the list.
-- View the task list.
+- Adicionar novas tarefas.  
+- Marcar tarefas como pendentes ou concluídas.  
+- Remover tarefas da lista.  
+- Visualizar a lista de tarefas.
 
-## Prerequisites
+## Pré-requisitos
 
-Before running the project, the following must be installed on your machine:
+Antes de executar o projeto, é necessário ter instalado em sua máquina:
 
-- Node.js (recommended version: 16 or higher)
-- Fastify framework
-- Node modules: `@fastify/mysql`, `path`, `@fastify/static`, `@fastify/formbody`
+- Node.js (versão recomendada: 16 ou superior)  
+- Framework Fastify  
+- Módulos Node: `@fastify/mysql`, `path`, `@fastify/static`, `@fastify/formbody`
 
-## How to Run the Code
+## Como Executar o Código
 
-1. Open the Command Prompt of your VSCode (or Terminal).
-2. Navigate to the project directory.
-3. Run the following command to start the server:
-"node index.js"
+1. Abra o terminal do VSCode (ou outro terminal de sua preferência).  
+2. Navegue até o diretório do projeto.  
+3. Execute o seguinte comando para iniciar o servidor:  
+   ```bash
+   node index.js
+   ```
+4. Abra seu navegador e acesse a seguinte URL:  
+   ```
+   localhost:3000/
+   ```
 
-4. Open your web browser and go to the following URL: "localhost:3000/"
+## Como Usar
 
-
-## How to Use
-
-- Add Tasks: Fill in the text field and click the "Add" button to add a new task to the list.
-- Choose Task Status: Select the appropriate status for your task (pending or completed).
-- Remove Tasks: Click the "Delete" icon next to the task to remove it.
+- **Adicionar Tarefas**: Preencha o campo de texto e clique no botão "Adicionar" para inserir uma nova tarefa na lista.  
+- **Selecionar o Status da Tarefa**: Escolha o status apropriado para sua tarefa (pendente ou concluída).  
+- **Remover Tarefas**: Clique no ícone de "Excluir" ao lado da tarefa para removê-la.
